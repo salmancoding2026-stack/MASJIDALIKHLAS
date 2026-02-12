@@ -290,6 +290,95 @@ button:disabled {
     }
 }
 
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+.whatsapp-btn img {
+    width: 30px;
+}
+
+/* --- TAMBAHAN UNTUK FITUR BARU --- */
+
+/* Gaya Khusus Kartu Agenda (Gradasi Hijau) */
+#agenda-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white !important;
+}
+
+#agenda-section .status-badge {
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+
+#countdown-timer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Gaya Galeri Kegiatan (Scroll Horizontal) */
+#galeri-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px 5px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Halus di iPhone */
+}
+
+/* Sembunyikan Scrollbar Galeri agar estetik */
+#galeri-container::-webkit-scrollbar {
+    display: none;
+}
+
+.galeri-item {
+    flex: 0 0 280px; /* Lebar satu foto */
+    scroll-snap-align: start;
+}
+
+.galeri-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid var(--white);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Gaya Tampilan QRIS */
+#qris-container img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+#qris-container img:hover {
+    transform: scale(1.05); /* Efek zoom tipis saat disentuh/klik */
+}
+
+/* Grid Layout untuk Dashboard Admin */
+@media (min-width: 768px) {
+    .main-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
 /* Tambahkan di bagian paling bawah style.css */
 @media (max-width: 600px) {
     .container {

@@ -418,3 +418,34 @@ if (document.getElementById("btn-reset-infaq")) {
         }
     };
 }
+
+// --- 16. LOGIKA QRIS ---
+const qrisRef = doc(db, "keuangan", "qris_data");
+const qrisContainer = document.getElementById("qris-container");
+
+// Tampilkan QRIS di Halaman Depan
+if (qrisContainer) {
+    onSnapshot(qrisRef, (docSnap) => {
+        if (docSnap.exists() && docSnap.data().url) {
+            qrisContainer.innerHTML = `
+                <img src="${docSnap.data().url}" alt="QRIS Masjid" style="width: 200px; height: auto; border: 5px solid #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            `;
+        }
+    });
+}
+
+// Update QRIS oleh Admin
+const btnUpdateQris = document.getElementById("btn-update-qris");
+if (btnUpdateQris) {
+    btnUpdateQris.onclick = async () => {
+        const url = document.getElementById("url-qris").value;
+        if (url) {
+            try {
+                await setDoc(qrisRef, { url: url });
+                alert("Gambar QRIS berhasil diperbarui!");
+            } catch (e) {
+                alert("Gagal: " + e.message);
+            }
+        }
+    };
+}
