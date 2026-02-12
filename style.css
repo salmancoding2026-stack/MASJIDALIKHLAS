@@ -289,3 +289,17 @@ button:disabled {
         text-align: center;
     }
 }
+
+/* Tambahkan di bagian paling bawah style.css */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px; /* Memberi ruang di pinggir layar HP */
+    }
+    .card {
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+    h1 {
+        font-size: 1.8rem; /* Supaya angka saldo tidak terlalu raksasa di HP */
+    }
+}
