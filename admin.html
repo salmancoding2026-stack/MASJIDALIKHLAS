@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Kontrol Admin - Masjid Al-Ikhlas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="https://cdn-icons-png.flaticon.com/512/2911/2911242.png" alt="Logo" class="logo-img">
+                <div class="brand">
+                    <span class="masjid-name">Panel Admin</span>
+                    <span class="masjid-loc">Sistem Kendali Real-time</span>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Lihat Website</a></li>
+                    <li><a href="laporan.html">Cek Laporan</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            
+            <div id="login-section">
+                <h2 style="margin-bottom: 10px;">Akses Pengurus</h2>
+                <p style="font-size: 0.85rem; color: #666; margin-bottom: 20px;">Gunakan akun DKM untuk mengelola informasi masjid.</p>
+                <input type="email" id="email" placeholder="Email Admin">
+                <input type="password" id="password" placeholder="Password">
+                <button id="btn-login" style="background-color: #2e7d32;">Masuk ke Panel</button>
+            </div>
+
+            <div id="admin-content" style="display:none;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2 style="color: #2e7d32; margin: 0;">Dashboard Utama</h2>
+                    <button id="btn-logout" style="width: auto; padding: 5px 15px; background: #f44336; font-size: 0.8rem;">Keluar</button>
+                </div>
+                
+                <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
+
+                <section style="text-align: left; margin-bottom: 30px;">
+                    <h3 style="border-left: 4px solid #2e7d32; padding-left: 10px;">💰 Kas & Pengumuman</h3>
+                    <p>Saldo Saat Ini: <strong id="saldo-display" style="color: #2e7d32;">...</strong></p>
+                    <input type="number" id="input-saldo" placeholder="Masukkan total saldo baru (Rp)">
+                    <button id="btn-update" style="margin-bottom: 15px;">Simpan Saldo Baru</button>
+
+                    <input type="text" id="input-pengumuman" placeholder="Tulis pengumuman running text...">
+                    <button id="btn-update-pengumuman" style="background-color: #fb8c00;">Update Running Text</button>
+                </section>
+
+                <hr style="margin: 25px 0;">
+
+                <section style="text-align: left; margin-bottom: 30px;">
+                    <h3 style="border-left: 4px solid #004d40; padding-left: 10px;">⏳ Agenda Mendatang</h3>
+                    <input type="text" id="input-nama-acara" placeholder="Nama Acara (Contoh: Buka Puasa Bersama)">
+                    <input type="datetime-local" id="input-tgl-acara" style="width: 100%; padding: 12px; border-radius: 10px; margin-bottom: 10px; border: 2px solid #eee;">
+                    <button id="btn-update-agenda" style="background-color: #004d40;">Pasang Agenda & Countdown</button>
+                </section>
+
+                <hr style="margin: 25px 0;">
+
+                <section style="text-align: left; margin-bottom: 30px;">
+                    <h3 style="border-left: 4px solid #0288d1; padding-left: 10px;">🏢 Status Fasilitas</h3>
+                    <input type="text" id="nama-fasilitas" placeholder="Nama Barang/Layanan">
+                    <select id="status-fasilitas" style="width: 100%; padding: 12px; border-radius: 10px; margin-bottom: 10px; border: 2px solid #eee;">
+                        <option value="Tersedia">Tersedia</option>
+                        <option value="Dipinjam">Sedang Dipinjam</option>
+                        <option value="Perbaikan">Dalam Perbaikan</option>
+                    </select>
+                    <button id="btn-add-fasilitas" style="background-color: #0288d1;">Update Status Fasilitas</button>
+                </section>
+
+                <hr style="margin: 25px 0;">
+
+                <section style="text-align: left; margin-bottom: 30px;">
+                    <h3 style="border-left: 4px solid #6a1b9a; padding-left: 10px;">🧧 Catat Infaq (Donatur)</h3>
+                    <input type="text" id="nama-donatur" placeholder="Nama Donatur (Kosongkan jika Hamba Allah)">
+                    <input type="number" id="jumlah-infaq" placeholder="Jumlah Nominal (Rp)">
+                    <button id="btn-add-infaq" style="background-color: #6a1b9a;">Simpan ke Laporan</button>
+                </section>
+
+                <hr style="margin: 25px 0;">
+
+                <section style="text-align: left; margin-bottom: 30px;">
+                    <h3 style="border-left: 4px solid #43a047; padding-left: 10px;">📰 Berita & Kegiatan</h3>
+                    <input type="text" id="judul-artikel" placeholder="Judul Berita Utama">
+                    <textarea id="isi-artikel" placeholder="Tulis isi berita selengkapnya..." style="width: 100%; height: 100px; padding: 12px; border-radius: 10px; border: 2px solid #eee; margin-bottom: 10px; font-family: inherit;"></textarea>
+                    <button id="btn-add-artikel" style="background-color: #43a047;">Posting Berita</button>
+                </section>
+
+                <hr style="margin: 25px 0;">
+
+                <section style="text-align: left; margin-bottom: 30px;">
+                    <h3 style="border-left: 4px solid #d81b60; padding-left: 10px;">📸 Tambah Foto Galeri</h3>
+                    <input type="text" id="url-foto" placeholder="Tempel Link/URL Foto (Direct Link)">
+                    <input type="text" id="ket-foto" placeholder="Keterangan singkat foto">
+                    <button id="btn-add-galeri" style="background-color: #d81b60;">Tambah ke Galeri</button>
+                </section>
+
+                <hr style="margin: 40px 0; border: 0; border-top: 2px dashed #ffcdd2;">
+
+                <section style="text-align: left; background-color: #fff5f5; padding: 20px; border-radius: 10px; border: 1px solid #ffcdd2;">
+                    <h3 style="color: #c62828;">⚠️ Zona Bahaya (Reset Data)</h3>
+                    <p style="font-size: 0.8rem; color: #666; margin-bottom: 15px;">
+                        Tindakan ini akan menghapus data secara permanen dari database.
+                    </p>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <button id="btn-reset-infaq" style="background-color: #d32f2f; font-size: 0.7rem;">Reset Infaq</button>
+                        <button id="btn-reset-artikel" style="background-color: #d32f2f; font-size: 0.7rem;">Reset Berita</button>
+                        <button id="btn-reset-galeri" style="background-color: #d32f2f; font-size: 0.7rem;">Reset Galeri</button>
+                        <button id="btn-reset-agenda" style="background-color: #d32f2f; font-size: 0.7rem;">Reset Agenda</button>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; color: #aaa; font-size: 0.8rem;">
+        &copy; 2026 Masjid Al-Ikhlas Digital - Panel Kendali
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Bulanan - Masjid Al-Ikhlas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="https://cdn-icons-png.flaticon.com/512/2911/2911242.png" alt="Logo Masjid" class="logo-img">
+                <div class="brand">
+                    <span class="masjid-name">Masjid Al-Ikhlas</span>
+                    <span class="masjid-loc">Laporan Transparansi Kas</span>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="laporan.html" style="color: var(--primary-color);">Laporan</a></li>
+                    <li><a href="admin.html" class="nav-admin">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <div style="text-align: right; width: 100%; max-width: 400px; margin-bottom: 10px;">
+            <button onclick="window.print()" id="btn-cetak" style="width: auto; padding: 8px 15px; background-color: #555; cursor: pointer; border-radius: 5px; color: white; border: none;">
+                🖨️ Cetak / Simpan PDF
+            </button>
+        </div>
+
+        <div class="card">
+            <span class="status-badge">Rekapitulasi Infaq</span>
+            
+            <h2 id="judul-bulan" style="margin-top: 15px; color: #333;">Laporan Kas Bulanan</h2>
+            
+            <div style="margin: 20px 0; padding: 20px; background-color: #f9f9f9; border-radius: 10px;">
+                <p style="margin: 0; color: #666; font-size: 0.9rem;">Total Pemasukan Bulan Ini:</p>
+                <h1 id="total-bulanan" style="color: #2e7d32; margin: 5px 0; font-size: 2.5rem;">Rp 0</h1>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+
+            <h3 style="text-align: left; font-size: 1rem; margin-bottom: 15px; color: #555;">Rincian Donatur:</h3>
+            
+            <div id="list-laporan">
+                <p style="text-align: center; color: #999; padding: 20px;">Memuat data laporan...</p>
+            </div>
+
+            <p style="margin-top: 30px; font-size: 0.8rem; color: #888; font-style: italic;">
+                "Harta tidak akan berkurang karena sedekah."
+            </p>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; color: #888; font-size: 0.85rem;">
+        &copy; 2026 Masjid Al-Ikhlas Digital. Seluruh data dicatat secara real-time.
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+/* --- ROOT VARIABLES --- */
+:root {
+    --primary-color: #2e7d32;    /* Hijau Khas Masjid */
+    --primary-dark: #1b5e20;
+    --secondary-color: #f4f7f6;
+    --text-dark: #333;
+    --text-light: #666;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0,0,0,0.1);
+    --danger: #d32f2f;
+}
+
+/* --- RESET & BASIC --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* --- HEADER STYLING --- */
+.main-header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.masjid-name {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.masjid-loc {
+    font-size: 0.75rem;
+    color: var(--text-light);
+}
+
+/* --- NAVIGATION --- */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+.nav-admin {
+    background: var(--primary-color);
+    color: var(--white) !important;
+    padding: 8px 18px;
+    border-radius: 25px;
+}
+
+.nav-admin:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* --- MAIN CARD CONTAINER --- */
+.container {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* --- SALDO STYLING --- */
+.status-badge {
+    background: #e8f5e9;
+    color: var(--primary-color);
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+h1#saldo-display {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin: 15px 0;
+    font-weight: 800;
+}
+
+/* --- FORM ELEMENTS --- */
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#btn-logout {
+    background-color: transparent;
+    color: var(--danger);
+    border: 2px solid var(--danger);
+}
+
+#btn-logout:hover {
+    background-color: var(--danger);
+    color: white;
+}
+
+/* --- FOOTER / LINK --- */
+.footer-link {
+    margin-top: 20px;
+    display: block;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .main-nav ul {
+        gap: 10px;
+    }
+}
+
+.shalat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+}
+
+.shalat-item:last-child {
+    border-bottom: none;
+}
+
+.shalat-item span {
+    color: var(--text-light);
+}
+
+.shalat-item strong {
+    color: var(--primary-color);
+}
+
+.running-text-container {
+    background-color: #333; /* Warna gelap agar kontras */
+    color: #ffeb3b; /* Warna kuning emas agar mudah dibaca */
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: 0.95rem;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#running-text-display {
+    cursor: default;
+}
+
+/* Pengaturan khusus saat halaman dicetak */
+@media print {
+    /* Sembunyikan header, tombol admin, dan tombol cetak */
+    .main-header, 
+    #btn-cetak, 
+    .nav-admin,
+    .main-nav {
+        display: none !important;
+    }
+
+    /* Hilangkan background abu-abu dan bayangan agar hemat tinta */
+    body {
+        background-color: white !important;
+    }
+
+    .container {
+        padding: 0;
+        margin: 0;
+    }
+
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #eee;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Tambahkan teks footer otomatis di hasil cetak */
+    .card::after {
+        content: "Dicetak otomatis melalui Sistem Informasi Masjid Al-Ikhlas";
+        display: block;
+        margin-top: 30px;
+        font-size: 0.7rem;
+        color: #888;
+        text-align: center;
+    }
+}

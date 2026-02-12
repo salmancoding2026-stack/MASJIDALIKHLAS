@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Resmi Masjid Al-Ikhlas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="https://cdn-icons-png.flaticon.com/512/2911/2911242.png" alt="Logo Masjid" class="logo-img">
+                <div class="brand">
+                    <span class="masjid-name">Masjid Al-Ikhlas</span>
+                    <span class="masjid-loc">Kota Depok, Jawa Barat</span>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="laporan.html">Laporan Kas</a></li>
+                    <li><a href="admin.html" class="nav-admin">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="running-text-container">
+        <marquee id="running-text-display">Memuat informasi masjid...</marquee>
+    </div>
+
+    <main class="container">
+        
+        <div class="card">
+            <span class="status-badge">Kas Masjid Hari Ini</span>
+            <h1 id="saldo-display" style="color: #2e7d32; font-size: 2.5rem; margin-top: 10px;">Rp 0</h1>
+            <p style="font-size: 0.8rem; color: #888;">Update real-time dari Bendahara</p>
+        </div>
+
+        <div class="card" id="agenda-section" style="display: none; background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%); color: white;">
+            <span class="status-badge" style="background: rgba(255,255,255,0.2); color: white;">Acara Mendatang</span>
+            <h2 id="nama-acara" style="margin-top: 15px; font-size: 1.2rem;">-</h2>
+            <div id="countdown-timer" style="font-size: 1.5rem; font-weight: bold; margin: 10px 0;">
+                00 Hari : 00 Jam : 00 Menit
+            </div>
+            <p id="tgl-acara" style="font-size: 0.8rem; opacity: 0.8;"></p>
+        </div>
+
+        <div class="card">
+            <span class="status-badge">Jadwal Shalat</span>
+            <div id="loading-shalat" style="margin-top: 15px; color: #888;">Memuat jadwal...</div>
+            <div id="jadwal-shalat-list" style="display:none; margin-top: 15px;">
+                <div class="shalat-item"><span>Subuh</span> <strong id="subuh">-</strong></div>
+                <div class="shalat-item"><span>Dzuhur</span> <strong id="dzuhur">-</strong></div>
+                <div class="shalat-item"><span>Ashar</span> <strong id="ashar">-</strong></div>
+                <div class="shalat-item"><span>Maghrib</span> <strong id="maghrib">-</strong></div>
+                <div class="shalat-item"><span>Isya</span> <strong id="isya">-</strong></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="status-badge">Fasilitas & Layanan</span>
+            <div id="fasilitas-list" style="margin-top: 15px; text-align: left;">
+                <p style="text-align: center; color: #888;">Memuat data fasilitas...</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="status-badge">Donatur Terkini</span>
+            <div id="donatur-list" style="margin-top: 15px; text-align: left;">
+                <p style="text-align: center; color: #888;">Memuat daftar donatur...</p>
+            </div>
+            <a href="laporan.html" style="display: inline-block; margin-top: 15px; font-size: 0.8rem; color: #2e7d32; text-decoration: none; font-weight: bold;">
+                Lihat Semua Laporan →
+            </a>
+        </div>
+
+        <div class="card">
+            <span class="status-badge">Berita & Kegiatan</span>
+            <div id="artikel-list" style="margin-top: 15px; text-align: left;">
+                <p style="text-align: center; color: #888;">Memuat berita terbaru...</p>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top: 20px;">
+    <span class="status-badge">Galeri Kegiatan</span>
+    <div id="galeri-container" style="display: flex; gap: 10px; overflow-x: auto; padding: 10px 0; scroll-snap-type: x mandatory;">
+        <p style="text-align: center; width: 100%; color: #888;">Belum ada foto kegiatan.</p>
+    </div>
+</div>
+
+    </main>
+
+    <footer style="text-align: center; padding: 30px 20px; color: #888; font-size: 0.85rem; background-color: #f5f5f5; margin-top: 40px;">
+        <p>&copy; 2026 Masjid Al-Ikhlas Digital. Managed with ❤️ by DKM Al-Ikhlas.</p>
+        <p style="font-size: 0.7rem; margin-top: 5px;">Data disinkronkan secara real-time dengan Firebase Firestore.</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
